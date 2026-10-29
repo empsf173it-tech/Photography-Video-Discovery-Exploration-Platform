@@ -1,0 +1,300 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View individual project details and access password-secured client albums. Enter passcode client2026 for demo access.">
+    <title>Client Gallery & Project Showcase | Aura & Light Studio</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <!-- Icon Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .client-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .client-img-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            aspect-ratio: 3/4;
+            background-color: var(--color-primary);
+        }
+        .client-img-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .client-img-card:hover img {
+            transform: scale(1.04);
+        }
+        .gallery-card-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+        .btn-gallery-action {
+            background-color: rgba(2, 6, 23, 0.7);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #FFFFFF;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-gallery-action:hover {
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+            border-color: var(--color-accent);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="studio-navbar scrolled d-flex align-items-center">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="index.html" class="navbar-brand-logo"><i class="fas fa-camera text-accent me-2"></i>AURA & LIGHT</a>
+            
+            <nav class="d-flex align-items-center">
+                <ul class="studio-nav-menu d-flex list-unstyled m-0 gap-3" id="studio-nav-menu">
+                    <li class="nav-item dropdown">
+                        <a href="index.html" class="studio-nav-link">Home <i class="fas fa-chevron-down nav-dropdown-caret ms-1"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Classic Editorial</a></li>                        </ul>
+                    </li>
+                    <li><a href="services.html" class="studio-nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="studio-nav-link active">Portfolio</a></li>
+                    <li><a href="blog.html" class="studio-nav-link">Blog</a></li>
+                    <li><a href="contact.html" class="studio-nav-link">Contact</a></li>
+                    <li><a href="dashboard.html" class="studio-nav-link">Dashboard</a></li>
+                    <li class="mobile-only-signup mt-2"><a href="signup.html" class="btn-nav-signup">Sign Up</a></li>
+                </ul>
+            </nav>
+
+            <div class="d-flex align-items-center gap-3">
+                <a href="signup.html" class="btn-nav-signup d-none d-md-inline-block">Sign Up</a>
+                <button class="hamburger-menu" id="btn-hamburger" aria-label="Menu Toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project / Gallery Securing Workspace -->
+    <main style="margin-top: var(--header-height); min-height: 70vh; padding-bottom: 5rem;">
+        
+        <!-- 1. Password Protected Cover Lock -->
+        <div class="container py-5" id="gallery-lock-overlay">
+            <div class="gallery-lock-screen glass-card reveal-fade-up">
+                <div class="mb-4">
+                    <i class="fas fa-lock text-accent mb-3" style="font-size: 3rem; color: var(--color-accent);"></i>
+                    <h2>Private Client Gallery</h2>
+                    <p class="text-muted">Enter the passcode provided in your session delivery email to view and select your proof photos.</p>
+                </div>
+                
+                <form id="gallery-unlock-form" class="mt-4">
+                    <div class="form-group-studio">
+                        <input type="password" class="form-control-studio gallery-passcode-input" id="gallery-passcode" placeholder="••••••••" required autocomplete="off">
+                    </div>
+                    <div id="gallery-unlock-error" class="text-danger small mt-2 mb-3 d-none"></div>
+                    <button type="submit" class="btn-premium btn-premium-primary w-100" id="btn-gallery-unlock">Unlock Gallery</button>
+                </form>
+                
+                <div class="mt-4 text-center">
+                    <p class="small text-muted m-0">Demo Passcode: <strong class="highlight-text">client2026</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Unlocked Client Workspace -->
+        <div class="container py-5 d-none" id="unlocked-client-gallery" style="opacity: 0;">
+            
+            <!-- Gallery Stats & Expiration Block -->
+            <div class="glass-card mb-5 reveal-fade-up">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <span class="text-uppercase-tracking">Session Portfolio Client Portal</span>
+                        <h1 style="font-size: 2.5rem;" class="mt-2 mb-2">The Vance Family Autumn Session</h1>
+                        <p class="text-muted mb-0">Location: Pine Ridge Nature Reserve &bull; Shot Date: August 1, 2026</p>
+                    </div>
+                    <div class="col-lg-6 text-lg-end">
+                        <div class="gallery-expiration-notice mb-3">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Expiration Notice: Gallery expires on September 30, 2026</span>
+                        </div>
+                        <div class="d-flex justify-content-lg-end gap-3 align-items-center">
+                            <div class="font-alt" style="font-size: 0.95rem;">
+                                Favorites Selection: <span class="badge bg-primary text-white rounded-pill px-2 py-1 ms-1 d-none" id="gallery-favorites-badge">0</span>
+                            </div>
+                            <button class="btn-premium btn-premium-accent py-2 px-3 fs-6" id="btn-download-album"><i class="fas fa-download me-1"></i> Download Album</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Client Proof Grid -->
+            <div class="client-grid reveal-fade-up">
+                
+                <!-- Proof 1 -->
+                <div class="client-img-card" data-lightbox="true">
+                    <img src="assets/images/families/family1.jpg" alt="Proof 1">
+                    <div class="gallery-card-controls">
+                        <button class="btn-gallery-action btn-gallery-heart" aria-label="Favorite image"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <!-- Proof 2 -->
+                <div class="client-img-card" data-lightbox="true">
+                    <img src="assets/images/families/family2.jpg" alt="Proof 2">
+                    <div class="gallery-card-controls">
+                        <button class="btn-gallery-action btn-gallery-heart" aria-label="Favorite image"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <!-- Proof 3 -->
+                <div class="client-img-card" data-lightbox="true">
+                    <img src="assets/images/gallery/gallery1.jpg" alt="Proof 3">
+                    <div class="gallery-card-controls">
+                        <button class="btn-gallery-action btn-gallery-heart" aria-label="Favorite image"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <!-- Proof 4 -->
+                <div class="client-img-card" data-lightbox="true">
+                    <img src="assets/images/gallery/gallery2.jpg" alt="Proof 4">
+                    <div class="gallery-card-controls">
+                        <button class="btn-gallery-action btn-gallery-heart" aria-label="Favorite image"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <!-- Proof 5 -->
+                <div class="client-img-card" data-lightbox="true">
+                    <img src="assets/images/gallery/gallery3.jpg" alt="Proof 5">
+                    <div class="gallery-card-controls">
+                        <button class="btn-gallery-action btn-gallery-heart" aria-label="Favorite image"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <!-- Proof 6 -->
+                <div class="client-img-card" data-lightbox="true">
+                    <img src="assets/images/gallery/gallery4.jpg" alt="Proof 6">
+                    <div class="gallery-card-controls">
+                        <button class="btn-gallery-action btn-gallery-heart" aria-label="Favorite image"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <!-- Proof 7 -->
+                <div class="client-img-card" data-lightbox="true">
+                    <img src="assets/images/gallery/gallery5.jpg" alt="Proof 7">
+                    <div class="gallery-card-controls">
+                        <button class="btn-gallery-action btn-gallery-heart" aria-label="Favorite image"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <!-- Proof 8 -->
+                <div class="client-img-card" data-lightbox="true">
+                    <img src="assets/images/gallery/gallery6.jpg" alt="Proof 8">
+                    <div class="gallery-card-controls">
+                        <button class="btn-gallery-action btn-gallery-heart" aria-label="Favorite image"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Custom Lightbox Modal Overlay -->
+    <div class="lightbox-modal" id="studio-lightbox-modal">
+        <button class="lightbox-close-btn" id="btn-lightbox-close" aria-label="Close Lightbox"><i class="fas fa-times"></i></button>
+        <button class="lightbox-nav-btn lightbox-nav-prev" id="btn-lightbox-prev" aria-label="Previous Image"><i class="fas fa-chevron-left"></i></button>
+        <div class="lightbox-content-frame">
+            <img src="" alt="Zoomed view" class="lightbox-img" id="lightbox-display-img">
+        </div>
+        <button class="lightbox-nav-btn lightbox-nav-next" id="btn-lightbox-next" aria-label="Next Image"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="studio-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <a href="index.html" class="footer-logo"><i class="fas fa-camera text-accent me-2"></i>AURA & LIGHT</a>
+                    <p class="text-white-50">An editorial fine-art photography studio creating warm, emotional, and timeless records of families, portraits, and milestones.</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Photography Services</h4>
+                    <ul class="footer-links-list p-0">
+                        <li><a href="service-details.html">Portrait Sessions</a></li>
+                        <li><a href="service-details.html">Family Photography</a></li>
+                        <li><a href="service-details.html">Maternity Shoots</a></li>
+                        <li><a href="service-details.html">Newborn Sessions</a></li>
+                        <li><a href="service-details.html">Graduation Portfolios</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Support & Resources</h4>
+                    <ul class="footer-links-list p-0">
+                        <li><a href="services.html#pricing-section">Pricing Packages</a></li>
+                        <li><a href="login.html">Client Portal</a></li>
+                        <li><a href="blog.html">Wardrobe & Style Guide</a></li>
+                        <li><a href="contact.html">Studio Location</a></li>
+                        <li><a href="404.html">Licensing & Terms</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Studio Newsletter</h4>
+                    <p class="text-white-50">Subscribe to receive exclusive access to seasonal mini-session slots and photography tips.</p>
+                    <form class="footer-newsletter-form">
+                        <input type="email" class="footer-newsletter-input" placeholder="Your email address" required aria-label="Newsletter email">
+                        <button class="footer-newsletter-btn" type="submit">Join</button>
+                    </form>
+                    <div class="footer-social-links">
+                        <a href="#" class="footer-social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-icon" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="footer-social-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom-bar text-white-50">
+                <p class="m-0">&copy; 2026 Aura & Light Studio. All Rights Reserved.</p>
+                <p class="m-0">Fine-Art Studio &bull; Creative Retouching &bull; Heirloom Albums</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/client-dashboard.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+

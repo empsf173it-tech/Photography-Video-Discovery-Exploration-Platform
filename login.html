@@ -1,0 +1,329 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Access your photography client portal to manage sessions, download finished files, or view pending invoices.">
+    <title>Client Portal Access | Aura & Light Studio</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <!-- Icon Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Top-Right Action Toolbar -->
+    <div class="auth-toolbar">    </div>
+
+    <!-- Main Workspace Container -->
+    <main style="min-height: 100vh; padding: 2.5rem 0;" class="d-flex align-items-center justify-content-center">
+        <div class="container py-2">
+
+            <!-- 1. AUTHENTICATION STATE (LOGIN SCREEN) -->
+            <div id="login-form-container" class="reveal-fade-up">
+                <div class="auth-panel">
+                    <div class="text-center mb-4">
+                        <a href="index.html" class="navbar-brand-logo mb-3 d-inline-flex align-items-center justify-content-center">
+                            <i class="fas fa-camera text-accent me-2"></i>AURA & LIGHT
+                        </a>
+                        <span class="text-uppercase-tracking d-block mb-1">Client Portal</span>
+                        <h1 class="my-2" style="font-size: 2.2rem;">Welcome Back</h1>
+                        <p class="text-muted small">Access your photography workspace and view proof galleries.</p>
+                    </div>
+
+                    <form id="studio-login-form"
+                        onsubmit="event.preventDefault(); document.getElementById('btn-demo-login').click();">
+                        <div class="form-group-studio">
+                            <label for="login-email">Email Address</label>
+                            <input type="email" class="form-control-studio" id="login-email"
+                                placeholder="client@address.com" required value="demo.client@gmail.com">
+                        </div>
+                        <div class="form-group-studio">
+                            <label for="login-password">Password</label>
+                            <div class="password-input-wrapper">
+                                <input type="password" class="form-control-studio" id="login-password"
+                                    placeholder="••••••••" required value="password123">
+                                <button type="button" class="password-toggle-btn" aria-label="Toggle Password Visibility">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-4 auth-remember-forgot">
+                            <div>
+                                <input type="checkbox" id="login-remember">
+                                <label for="login-remember" class="text-muted ms-1">Remember me</label>
+                            </div>
+                            <a href="#" onclick="alert('Password reset link sent to demo email!');"
+                                class="text-accent">Forgot Password?</a>
+                        </div>
+
+                        <button type="submit" class="btn-premium btn-premium-primary w-100 mb-3">Sign In</button>
+                    </form>
+
+                    <!-- Social Sign-in Divider -->
+                    <div class="text-center my-4 font-alt">
+                        <span class="text-muted small">Or continue with</span>
+                    </div>
+
+                    <!-- Authentic Social Buttons -->
+                    <div class="d-flex gap-3 justify-content-center mb-3">
+                        <button type="button" class="btn-premium btn-social-signin flex-fill py-2 px-3 d-flex align-items-center justify-content-center gap-2" style="margin-right: 0.5rem;" onclick="alert('Google Sign-In Connected!');">
+                            <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+                                <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.11-6.72-4.96H1.29v3.15C3.26 21.3 7.31 24 12 24z"/>
+                                <path fill="#FBBC05" d="M5.28 14.24c-.25-.72-.38-1.49-.38-2.24s.13-1.52.38-2.24V6.61H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.39l3.99-3.15z"/>
+                                <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.61l3.99 3.15c.95-2.85 3.6-4.96 6.72-4.96z"/>
+                            </svg>
+                            <span>Google</span>
+                        </button>
+                        <button type="button" class="btn-premium btn-social-signin flex-fill py-2 px-3 d-flex align-items-center justify-content-center gap-2" onclick="alert('Apple ID Connected!');">
+                            <svg width="18" height="18" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                                <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 52.3-15.2 69.5-34.3z"/>
+                            </svg>
+                            <span>Apple</span>
+                        </button>
+                    </div>
+
+                    <div class="text-center mt-4 font-alt small">
+                        <span class="text-muted">Don't have an account?</span>
+                        <a href="signup.html" class="text-accent ms-1">Create Account</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. AUTHENTICATED STATE (CLIENT PORTAL WORKSPACE) -->
+            <div id="client-dashboard-workspace" class="d-none mt-4">
+                <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom" style="border-color: var(--glass-border) !important;">
+                    <a href="index.html" class="navbar-brand-logo m-0"><i class="fas fa-camera text-accent me-2"></i>AURA & LIGHT</a>
+                    <a href="login.html" class="btn-premium btn-premium-outline py-1 px-3 font-alt small"><i class="fas fa-sign-out-alt me-1"></i>Sign Out</a>
+                </div>
+                <div class="row">
+                    <!-- Sidebar Menu -->
+                    <div class="col-lg-3">
+                        <div class="glass-card p-3 mb-4">
+                            <div class="text-center py-4 border-bottom mb-3"
+                                style="border-color: var(--glass-border) !important;">
+                                <h4 class="font-alt m-0"
+                                    style="font-size: 1.2rem; font-weight: 500; color: var(--color-text-primary);">
+                                    Marcus Vance</h4>
+                                <p class="text-accent small font-alt mb-0" style="color: var(--color-accent);">Client
+                                    Level: Gold Member</p>
+                            </div>
+                            <ul class="dashboard-sidebar-menu p-0 m-0">
+                                <li>
+                                    <a href="#" class="dashboard-menu-link active" data-tab="overview">
+                                        <i class="fas fa-home"></i> Overview
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dashboard-menu-link" data-tab="bookings">
+                                        <i class="fas fa-calendar-alt"></i> Bookings & Status
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dashboard-menu-link" data-tab="history">
+                                        <i class="fas fa-folder-open"></i> Session Galleries
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dashboard-menu-link" data-tab="settings">
+                                        <i class="fas fa-cog"></i> Settings
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Panel Display Workspace -->
+                    <div class="col-lg-9">
+
+                        <!-- Panel A: Overview -->
+                        <div id="overview-tab-panel" class="dashboard-tab-panel">
+                            <div class="glass-card mb-4">
+                                <h3 class="font-alt mb-3" style="font-size: 1.8rem;">Client Workspace Overview</h3>
+                                <p class="text-muted">Manage your upcoming photography session details, download
+                                    finished files, or modify notification preferences from a single location.</p>
+                            </div>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="dashboard-widget-card">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <h4 class="font-alt m-0" style="font-size: 1.15rem; font-weight: 500;">
+                                                Active Schedule</h4>
+                                            <span class="dashboard-status-badge badge-confirmed">Confirmed</span>
+                                        </div>
+                                        <p class="mb-2 font-alt"
+                                            style="font-weight: 500; color: var(--color-text-primary);">Autumn Lifestyle
+                                            Family Session</p>
+                                        <p class="small text-muted mb-0"><i class="fas fa-clock me-1"></i> September 15,
+                                            2026 at 04:30 PM</p>
+                                        <p class="small text-muted"><i class="fas fa-map-marker-alt me-1"></i> Pine
+                                            Ridge Nature Reserve</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="dashboard-widget-card">
+                                        <h4 class="font-alt mb-3" style="font-size: 1.15rem; font-weight: 500;">Account
+                                            Actions</h4>
+                                        <ul class="list-unstyled p-0 m-0 small font-alt">
+                                            <li class="mb-2"><a href="portfolio-details.html" class="text-accent"><i
+                                                        class="fas fa-images me-2"></i> Access Proofing Gallery</a></li>
+                                            <li class="mb-2"><a href="services.html" class="text-accent"><i
+                                                        class="fas fa-gift me-2"></i> Purchase Print Gift Card</a></li>
+                                            <li class="mb-0"><a href="contact.html" class="text-accent"><i
+                                                        class="fas fa-comment me-2"></i> Contact Studio Assistant</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel B: Bookings & Status -->
+                        <div id="bookings-tab-panel" class="dashboard-tab-panel d-none">
+                            <div class="glass-card">
+                                <h3 class="font-alt mb-4" style="font-size: 1.8rem;">Upcoming Photo Sessions</h3>
+                                <div class="table-comparison-wrapper mb-4">
+                                    <table class="table-comparison" style="min-width: 600px;">
+                                        <thead>
+                                            <tr>
+                                                <th>Focus</th>
+                                                <th>Date & Hour</th>
+                                                <th>Location</th>
+                                                <th>Booking Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Family Lifestyle</td>
+                                                <td>Sept 15, 2026 &bull; 04:30 PM</td>
+                                                <td>Pine Ridge Reserve</td>
+                                                <td><span
+                                                        class="dashboard-status-badge badge-confirmed">Confirmed</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Maternity Fine Art</td>
+                                                <td>Oct 20, 2026 &bull; 02:00 PM</td>
+                                                <td>Boutique Studio</td>
+                                                <td><span class="dashboard-status-badge badge-pending">Pending
+                                                        Info</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <button
+                                    class="btn-premium btn-premium-outline btn-cancel-session-mock btn-outline-danger py-2">Request
+                                    Session Cancellation</button>
+                            </div>
+                        </div>
+
+                        <!-- Panel C: Galleries & Invoice History -->
+                        <div id="history-tab-panel" class="dashboard-tab-panel d-none">
+                            <div class="glass-card">
+                                <h3 class="font-alt mb-4" style="font-size: 1.8rem;">Historical Galleries & Invoices
+                                </h3>
+
+                                <div class="dashboard-widget-card p-4">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-8">
+                                            <h4 class="font-alt mb-1"
+                                                style="font-size: 1.2rem; font-weight: 500; color: var(--color-text-primary);">
+                                                Summer Portraits 2025</h4>
+                                            <p class="small text-muted mb-0">Delivered: July 20, 2025 &bull; Total
+                                                Files: 45 High-Res WebP</p>
+                                            <p class="small text-muted">Invoice Ref: INV-2025-092 &bull; Paid: $550
+                                                (Heirloom Package)</p>
+                                        </div>
+                                        <div class="col-md-4 text-md-end">
+                                            <a href="portfolio-details.html"
+                                                class="btn-premium btn-premium-outline py-2 px-3 fs-6">Access
+                                                Gallery</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel D: Settings -->
+                        <div id="settings-tab-panel" class="dashboard-tab-panel d-none">
+                            <div class="glass-card">
+                                <h3 class="font-alt mb-4" style="font-size: 1.8rem;">Profile & System Settings</h3>
+                                <form id="settings-mock-form">
+                                    <div class="row">
+                                        <div class="col-md-6 form-group-studio">
+                                            <label for="settings-name">Full Name</label>
+                                            <input type="text" class="form-control-studio" id="settings-name"
+                                                value="Marcus Vance" required>
+                                        </div>
+                                        <div class="col-md-6 form-group-studio">
+                                            <label for="settings-email">Email Address</label>
+                                            <input type="email" class="form-control-studio" id="settings-email"
+                                                value="demo.client@gmail.com" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group-studio">
+                                        <label for="settings-phone">Phone Coordinate</label>
+                                        <input type="tel" class="form-control-studio" id="settings-phone"
+                                            value="(310) 555-8910">
+                                    </div>
+                                    <div class="form-group-studio mt-3">
+                                        <input type="checkbox" id="settings-promo" checked>
+                                        <label for="settings-promo" class="text-muted small ms-1">Subscribe to seasonal
+                                            mini-session availability alerts</label>
+                                    </div>
+                                    <button type="submit" class="btn-premium btn-premium-primary mt-3">Save
+                                        Preferences</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+
+    <!-- GSAP Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/client-dashboard.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.querySelectorAll('.password-toggle-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const wrapper = btn.closest('.password-input-wrapper');
+                const input = wrapper.querySelector('input');
+                const icon = btn.querySelector('i');
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.remove('fa-eye');
+                    icon.classList.add('fa-eye-slash');
+                } else {
+                    input.type = 'password';
+                    icon.classList.remove('fa-eye-slash');
+                    icon.classList.add('fa-eye');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
+

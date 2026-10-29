@@ -1,0 +1,526 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="View our fine-art photography gallery featuring portrait sessions, cozy newborn portraits, maternity pictures, and family milestones.">
+    <title>Studio Portfolio Gallery | Aura & Light Studio</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <!-- Icon Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Uniform Grid Style */
+        .editorial-masonry {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            width: 100%;
+        }
+
+        .editorial-masonry-item {
+            width: 100%;
+        }
+
+        .portfolio-card-img {
+            height: 400px !important;
+            object-fit: cover !important;
+            width: 100% !important;
+        }
+
+        @media (max-width: 991px) {
+            .editorial-masonry {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .editorial-masonry-item:last-child {
+                grid-column: span 2;
+                justify-self: center;
+                width: 100%;
+                max-width: calc(50% - 15px);
+            }
+        }
+
+        @media (max-width: 575px) {
+            .editorial-masonry {
+                grid-template-columns: 1fr;
+            }
+
+            .editorial-masonry-item:last-child {
+                grid-column: auto;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="studio-navbar scrolled d-flex align-items-center">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="index.html" class="navbar-brand-logo"><i class="fas fa-camera text-accent me-2"></i>AURA & LIGHT</a>
+
+            <nav class="d-flex align-items-center">
+                <ul class="studio-nav-menu d-flex list-unstyled m-0 gap-3" id="studio-nav-menu">
+                    <li class="nav-item dropdown">
+                        <a href="index.html" class="studio-nav-link">Home <i
+                                class="fas fa-chevron-down nav-dropdown-caret ms-1"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Classic Editorial</a></li>                        </ul>
+                    </li>
+                    <li><a href="services.html" class="studio-nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="studio-nav-link active">Portfolio</a></li>
+                    <li><a href="blog.html" class="studio-nav-link">Blog</a></li>
+                    <li><a href="contact.html" class="studio-nav-link">Contact</a></li>
+                    <li><a href="dashboard.html" class="studio-nav-link">Dashboard</a></li>
+                    <li class="mobile-only-signup mt-2"><a href="signup.html" class="btn-nav-signup">Sign Up</a></li>
+                </ul>
+            </nav>
+
+            <div class="d-flex align-items-center gap-3">
+                <a href="signup.html" class="btn-nav-signup d-none d-md-inline-block">Sign Up</a>
+                <button class="hamburger-menu" id="btn-hamburger" aria-label="Menu Toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="py-5"
+        style="margin-top: var(--header-height); background-color: var(--color-surface); border-bottom: 1px solid var(--glass-border);">
+        <div class="container py-5 text-center reveal-fade-up">
+            <p class="text-uppercase-tracking">Visual Poetry</p>
+            <h1>Creative Portfolio</h1>
+            <p class="lead max-width-600 mx-auto text-muted">A curated collection of warm lifestyle moments, fine-art
+                studio portraits, newborn frames, and corporate branding profiles.</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="py-5">
+        <div class="container py-5">
+            <!-- Filter Tabs -->
+            <div class="portfolio-filters reveal-fade-up">
+                <button class="filter-btn active" data-filter="all">All Work</button>
+                <button class="filter-btn" data-filter="portraits">Portraits</button>
+                <button class="filter-btn" data-filter="families">Families</button>
+                <button class="filter-btn" data-filter="newborn">Newborn & Maternity</button>
+                <button class="filter-btn" data-filter="graduation">Graduation</button>
+            </div>
+
+            <!-- Masonry Grid -->
+            <div class="editorial-masonry reveal-fade-up">
+                <!-- Card 1: Family -->
+                <div class="editorial-masonry-item portfolio-card" data-categories="families" data-lightbox="true">
+                    <img src="assets/images/families/family1.jpg" class="portfolio-card-img"
+                        alt="Warm sunset family embrace">
+                    <div class="portfolio-card-hover">
+                        <span class="portfolio-card-category">Families</span>
+                        <h3 class="portfolio-card-title">Golden Field Walk</h3>
+                    </div>
+                </div>
+
+                <!-- Card 2: Portrait -->
+                <div class="editorial-masonry-item portfolio-card" data-categories="portraits" data-lightbox="true">
+                    <img src="assets/images/portraits/portrait1.jpg" class="portfolio-card-img"
+                        alt="Fine art black and white studio portrait">
+                    <div class="portfolio-card-hover">
+                        <span class="portfolio-card-category">Portraits</span>
+                        <h3 class="portfolio-card-title">Editorial Expressions</h3>
+                    </div>
+                </div>
+
+                <!-- Card 3: Maternity -->
+                <div class="editorial-masonry-item portfolio-card" data-categories="newborn" data-lightbox="true">
+                    <img src="assets/images/maternity/maternity1.jpg" class="portfolio-card-img"
+                        alt="Pregnancy glow silhouette session">
+                    <div class="portfolio-card-hover">
+                        <span class="portfolio-card-category">Newborn & Maternity</span>
+                        <h3 class="portfolio-card-title">Awaiting Aura</h3>
+                    </div>
+                </div>
+
+                <!-- Card 4: Newborn -->
+                <div class="editorial-masonry-item portfolio-card" data-categories="newborn" data-lightbox="true">
+                    <img src="assets/images/newborn/newborn1.jpg" class="portfolio-card-img"
+                        alt="Baby sleeping cozy blanket">
+                    <div class="portfolio-card-hover">
+                        <span class="portfolio-card-category">Newborn & Maternity</span>
+                        <h3 class="portfolio-card-title">Quiet Sleep</h3>
+                    </div>
+                </div>
+
+                <!-- Card 5: Graduation -->
+                <div class="editorial-masonry-item portfolio-card" data-categories="graduation" data-lightbox="true">
+                    <img src="assets/images/graduation/graduation1.jpg" alt="Smiling graduate at university"
+                        class="portfolio-card-img">
+                    <div class="portfolio-card-hover">
+                        <span class="portfolio-card-category">Graduation</span>
+                        <h3 class="portfolio-card-title">The Horizon</h3>
+                    </div>
+                </div>
+
+                <!-- Card 6: Portrait -->
+                <div class="editorial-masonry-item portfolio-card" data-categories="portraits" data-lightbox="true">
+                    <img src="assets/images/portraits/portrait2.jpg" class="portfolio-card-img"
+                        alt="Corporate professional man">
+                    <div class="portfolio-card-hover">
+                        <span class="portfolio-card-category">Portraits</span>
+                        <h3 class="portfolio-card-title">Corporate Clarity</h3>
+                    </div>
+                </div>
+
+                <!-- Card 7: Newborn -->
+                <div class="editorial-masonry-item portfolio-card" data-categories="newborn" data-lightbox="true">
+                    <img src="assets/images/newborn/newborn2.jpg" alt="Baby hands macro detail"
+                        class="portfolio-card-img">
+                    <div class="portfolio-card-hover">
+                        <span class="portfolio-card-category">Newborn & Maternity</span>
+                        <h3 class="portfolio-card-title">Tiny Fingers</h3>
+                    </div>
+                </div>
+
+                <!-- Card 8: Family -->
+                <div class="editorial-masonry-item portfolio-card" data-categories="families" data-lightbox="true">
+                    <img src="assets/images/families/family2.jpg" class="portfolio-card-img"
+                        alt="Father and toddler playing outdoors">
+                    <div class="portfolio-card-hover">
+                        <span class="portfolio-card-category">Families</span>
+                        <h3 class="portfolio-card-title">Joyful Canopy</h3>
+                    </div>
+                </div>
+
+                <!-- Card 9: Graduation -->
+                <div class="editorial-masonry-item portfolio-card" data-categories="graduation" data-lightbox="true">
+                    <img src="assets/images/graduation/graduation2.jpg" alt="Graduation cap celebration throw"
+                        class="portfolio-card-img">
+                    <div class="portfolio-card-hover">
+                        <span class="portfolio-card-category">Graduation</span>
+                        <h3 class="portfolio-card-title">Cap & Tassel</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 reveal-fade-up">
+                <a href="portfolio-details.html" class="btn-premium btn-premium-primary">View Featured Project
+                    Detail</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heirloom Fine-Art Prints & Custom Framing Showcase Section -->
+    <section class="py-5 bg-surface"
+        style="background-color: var(--color-surface); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);">
+        <div class="container py-5">
+            <div class="text-center mb-5 reveal-fade-up">
+                <p class="text-uppercase-tracking">Heirloom Craftsmanship</p>
+                <h2>From Shutter to Sanctuary: Handcrafted Art for Your Walls</h2>
+                <div class="mx-auto"
+                    style="width: 50px; height: 1px; background-color: var(--color-accent); margin-top: 1rem; margin-bottom: 1rem;">
+                </div>
+                <p class="lead max-width-700 mx-auto text-muted">Photographs are meant to be touched, framed, and
+                    displayed in daily living spaces. Discover our museum-grade archival finishes tailored for modern
+                    homes.</p>
+            </div>
+
+            <!-- 3 Heirloom Pillars -->
+            <div class="row g-4 mb-5 reveal-fade-up">
+                <div class="col-lg-4 col-md-6">
+                    <div class="heirloom-feature-card">
+                        <div class="heirloom-card-icon">
+                            <i class="fas fa-crop-alt"></i>
+                        </div>
+                        <h3 class="heirloom-card-title">Museum Framing</h3>
+                        <p>Solid American walnut, bleached white oak, and anodized matte black metal frames. Fitted with
+                            99% UV-filtering reflection control museum glass to protect rich colors for decades.</p>
+                        <span class="heirloom-card-spec"><i class="fas fa-check-circle me-1"></i> Archival Cotton Rag
+                            Matting</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="heirloom-feature-card">
+                        <div class="heirloom-card-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3 class="heirloom-card-title">Artisan Albums</h3>
+                        <p>Hand-bound flush mount keepsakes crafted with authentic Italian grain leather and Japanese
+                            cotton linens. Seamless panoramic spreads printed on 300gsm heavyweight fine-art sheets.</p>
+                        <span class="heirloom-card-spec"><i class="fas fa-check-circle me-1"></i> 100-Year Longevity
+                            Guarantee</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="heirloom-feature-card">
+                        <div class="heirloom-card-icon">
+                            <i class="fas fa-vr-cardboard"></i>
+                        </div>
+                        <h3 class="heirloom-card-title">Virtual Room</h3>
+                        <p>Not sure which frame size fits over your sofa or nursery crib? Send us a quick mobile
+                            snapshot of your wall, and our studio team renders your portraits scaled to exact
+                            proportions before ordering.</p>
+                        <span class="heirloom-card-spec"><i class="fas fa-check-circle me-1"></i> Included with All
+                            Sessions</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Wall Gallery Layout Selector -->
+            <div class="wall-layout-box reveal-fade-up">
+                <div class="text-center mb-4">
+                    <span class="text-uppercase-tracking" style="font-size: 0.8rem;">Interactive Gallery Wall
+                        Planner</span>
+                    <h3 class="mt-2 mb-2 font-alt" style="font-size: 1.8rem;">Explore Signature Frame Arrangements</h3>
+                    <p class="text-muted small max-width-600 mx-auto">Select a curated room layout below to preview
+                        dimensions, ideal wall placements, and recommended crop ratios for your home.</p>
+                </div>
+
+                <!-- Navigation Tabs -->
+                <div class="wall-layout-nav">
+                    <button type="button" class="wall-layout-btn active" data-target="layout-triptych">
+                        <i class="fas fa-columns me-1"></i> Living Room Triptych
+                    </button>
+                    <button type="button" class="wall-layout-btn" data-target="layout-focal">
+                        <i class="fas fa-expand me-1"></i> Statement Masterpiece
+                    </button>
+                    <button type="button" class="wall-layout-btn" data-target="layout-staircase">
+                        <i class="fas fa-th-large me-1"></i> Staircase Mosaic
+                    </button>
+                </div>
+
+                <!-- Tab Panel 1: Triptych -->
+                <div class="wall-layout-panel active" id="layout-triptych">
+                    <div class="row align-items-center g-4">
+                        <div class="col-lg-7">
+                            <div class="wall-visual-mockup">
+                                <div class="wall-frame-item" style="width: 130px; height: 175px;">
+                                    <i class="fas fa-image"></i>
+                                    <strong>16" &times; 24"</strong>
+                                    <span class="text-muted" style="font-size: 0.65rem;">Left Perspective</span>
+                                </div>
+                                <div class="wall-frame-item" style="width: 130px; height: 175px;">
+                                    <i class="fas fa-camera text-accent"></i>
+                                    <strong>16" &times; 24"</strong>
+                                    <span class="text-muted" style="font-size: 0.65rem;">Center Core</span>
+                                </div>
+                                <div class="wall-frame-item" style="width: 130px; height: 175px;">
+                                    <i class="fas fa-image"></i>
+                                    <strong>16" &times; 24"</strong>
+                                    <span class="text-muted" style="font-size: 0.65rem;">Right Perspective</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <h4 class="font-alt mb-2">The Balanced Triptych</h4>
+                            <p class="text-muted small mb-3">A symmetrical 3-frame arrangement that breathes
+                                architectural harmony into wide living room walls or over master bedroom headboards.</p>
+                            <ul class="list-unstyled small font-alt text-muted mb-4 p-0">
+                                <li class="mb-2"><i class="fas fa-ruler-combined text-accent me-2"></i> <strong>Wall
+                                        Width:</strong> Optimal on walls 8–12 feet wide</li>
+                                <li class="mb-2"><i class="fas fa-palette text-accent me-2"></i> <strong>Recommended
+                                        Tone:</strong> Cohesive warm golden hour series</li>
+                                <li><i class="fas fa-tag text-accent me-2"></i> <strong>Package Match:</strong> 100%
+                                    covered by Heirloom Collection print credit</li>
+                            </ul>
+                            <a href="services.html#pricing-section"
+                                class="btn-premium btn-premium-primary py-2 px-3 font-alt small">Order with Print
+                                Credits</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Panel 2: Focal Statement -->
+                <div class="wall-layout-panel" id="layout-focal">
+                    <div class="row align-items-center g-4">
+                        <div class="col-lg-7">
+                            <div class="wall-visual-mockup">
+                                <div class="wall-frame-item" style="width: 260px; height: 190px; border-width: 4px;">
+                                    <i class="fas fa-star text-accent" style="font-size: 1.5rem;"></i>
+                                    <strong style="font-size: 0.95rem;">30" &times; 40" Grand Statement</strong>
+                                    <span class="text-muted" style="font-size: 0.7rem;">Hand-Deckled Cotton
+                                        Canvas</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <h4 class="font-alt mb-2">The Solitary Anchor</h4>
+                            <p class="text-muted small mb-3">One commanding centerpiece that captures attention the
+                                moment guests walk into the room. Ideal for milestone family moments or dramatic
+                                environmental portraits.</p>
+                            <ul class="list-unstyled small font-alt text-muted mb-4 p-0">
+                                <li class="mb-2"><i class="fas fa-ruler-combined text-accent me-2"></i> <strong>Wall
+                                        Width:</strong> Dining room, fireplace mantle, or high ceilings</li>
+                                <li class="mb-2"><i class="fas fa-palette text-accent me-2"></i> <strong>Recommended
+                                        Tone:</strong> Cinematic landscape portrait with deep shadows</li>
+                                <li><i class="fas fa-tag text-accent me-2"></i> <strong>Package Match:</strong>
+                                    Available as fine-art gallery upgrade</li>
+                            </ul>
+                            <a href="contact.html"
+                                class="btn-premium btn-premium-primary py-2 px-3 font-alt small">Request Custom
+                                Dimensions</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Panel 3: Staircase Mosaic -->
+                <div class="wall-layout-panel" id="layout-staircase">
+                    <div class="row align-items-center g-4">
+                        <div class="col-lg-7">
+                            <div class="wall-visual-mockup" style="align-items: flex-end;">
+                                <div class="wall-frame-item" style="width: 80px; height: 100px; margin-bottom: 0px;">
+                                    <strong>8" &times; 10"</strong>
+                                    <span class="text-muted" style="font-size: 0.6rem;">Step 1</span>
+                                </div>
+                                <div class="wall-frame-item" style="width: 100px; height: 130px; margin-bottom: 25px;">
+                                    <strong>11" &times; 14"</strong>
+                                    <span class="text-muted" style="font-size: 0.6rem;">Step 2</span>
+                                </div>
+                                <div class="wall-frame-item" style="width: 120px; height: 160px; margin-bottom: 50px;">
+                                    <i class="fas fa-heart text-accent"></i>
+                                    <strong>16" &times; 20"</strong>
+                                    <span class="text-muted" style="font-size: 0.6rem;">Center Step</span>
+                                </div>
+                                <div class="wall-frame-item" style="width: 90px; height: 120px; margin-bottom: 75px;">
+                                    <strong>11" &times; 14"</strong>
+                                    <span class="text-muted" style="font-size: 0.6rem;">Step 4</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <h4 class="font-alt mb-2">The Dynamic Storyboard</h4>
+                            <p class="text-muted small mb-3">An ascending salon-style collection designed to trace the
+                                evolving milestones of your family across different seasons and years.</p>
+                            <ul class="list-unstyled small font-alt text-muted mb-4 p-0">
+                                <li class="mb-2"><i class="fas fa-ruler-combined text-accent me-2"></i> <strong>Wall
+                                        Width:</strong> Stairwell or hallway progression</li>
+                                <li class="mb-2"><i class="fas fa-palette text-accent me-2"></i> <strong>Recommended
+                                        Tone:</strong> Diverse mix of candid laughs & newborn macros</li>
+                                <li><i class="fas fa-tag text-accent me-2"></i> <strong>Package Match:</strong> Modular
+                                    annual print addition credits</li>
+                            </ul>
+                            <a href="services.html"
+                                class="btn-premium btn-premium-primary py-2 px-3 font-alt small">Explore Print
+                                Packages</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Session Consultation CTA -->
+            <div class="text-center mt-5 reveal-fade-up">
+                <div class="d-inline-flex align-items-center gap-3 flex-wrap justify-content-center">
+                    <span class="text-muted font-alt small">Want tailored framing advice for your home?</span>
+                    <a href="contact.html" class="btn-premium btn-premium-accent py-2 px-4 font-alt">Book Design
+                        Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Lightbox Modal Overlay -->
+    <div class="lightbox-modal" id="studio-lightbox-modal">
+        <button class="lightbox-close-btn" id="btn-lightbox-close" aria-label="Close Lightbox"><i
+                class="fas fa-times"></i></button>
+        <button class="lightbox-nav-btn lightbox-nav-prev" id="btn-lightbox-prev" aria-label="Previous Image"><i
+                class="fas fa-chevron-left"></i></button>
+        <div class="lightbox-content-frame">
+            <img src="" alt="Zoomed view" class="lightbox-img" id="lightbox-display-img">
+        </div>
+        <button class="lightbox-nav-btn lightbox-nav-next" id="btn-lightbox-next" aria-label="Next Image"><i
+                class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="studio-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <a href="index.html" class="footer-logo"><i class="fas fa-camera text-accent me-2"></i>AURA &
+                        LIGHT</a>
+                    <p class="text-white-50">An editorial fine-art photography studio creating warm, emotional, and
+                        timeless records of families, portraits, and milestones.</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Photography Services</h4>
+                    <ul class="footer-links-list p-0">
+                        <li><a href="service-details.html">Portrait Sessions</a></li>
+                        <li><a href="service-details.html">Family Photography</a></li>
+                        <li><a href="service-details.html">Maternity Shoots</a></li>
+                        <li><a href="service-details.html">Newborn Sessions</a></li>
+                        <li><a href="service-details.html">Graduation Portfolios</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Support & Resources</h4>
+                    <ul class="footer-links-list p-0">
+                        <li><a href="services.html#pricing-section">Pricing Packages</a></li>
+                        <li><a href="login.html">Client Portal</a></li>
+                        <li><a href="blog.html">Wardrobe & Style Guide</a></li>
+                        <li><a href="contact.html">Studio Location</a></li>
+                        <li><a href="404.html">Licensing & Terms</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Studio Newsletter</h4>
+                    <p class="text-white-50">Subscribe to receive exclusive access to seasonal mini-session slots and
+                        photography tips.</p>
+                    <form class="footer-newsletter-form">
+                        <input type="email" class="footer-newsletter-input" placeholder="Your email address" required
+                            aria-label="Newsletter email">
+                        <button class="footer-newsletter-btn" type="submit">Join</button>
+                    </form>
+                    <div class="footer-social-links">
+                        <a href="#" class="footer-social-icon" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-icon" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-icon" aria-label="Pinterest"><i
+                                class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="footer-social-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom-bar text-white-50">
+                <p class="m-0">&copy; 2026 Aura & Light Studio. All Rights Reserved.</p>
+                <p class="m-0">Fine-Art Studio &bull; Creative Retouching &bull; Heirloom Albums</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/client-dashboard.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Interactive Wall Gallery Selector
+        document.querySelectorAll('.wall-layout-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.wall-layout-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.wall-layout-panel').forEach(p => p.classList.remove('active'));
+                btn.classList.add('active');
+                const targetId = btn.getAttribute('data-target');
+                const targetPanel = document.getElementById(targetId);
+                if (targetPanel) {
+                    targetPanel.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

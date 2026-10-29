@@ -1,0 +1,408 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Access your photography client portal to manage sessions, choose package types, download finished files, or view session statuses.">
+    <title>Client Dashboard | Aura & Light Studio</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <!-- Icon Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Full-Height Dashboard App Wrapper -->
+    <div class="dashboard-app-layout">
+
+        <!-- Docked Left-Corner Sidebar (Top to Bottom) -->
+        <aside class="dashboard-app-sidebar dashboard-sidebar-col" id="dashboard-sidebar">
+            <!-- Brand Identity Box -->
+            <div class="sidebar-brand-box">
+                <a href="index.html" class="navbar-brand-logo"><i class="fas fa-camera text-accent me-2"></i>AURA & LIGHT</a>
+                <span class="sidebar-brand-badge">Private Client Portal</span>
+            </div>
+
+            <!-- Client Profile Card -->
+            <div class="sidebar-profile-box">
+                <div class="sidebar-avatar">MV</div>
+                <div class="sidebar-profile-info">
+                    <h4 class="sidebar-profile-name">Marcus Vance</h4>
+                    <p class="sidebar-profile-tier"><i class="fas fa-crown"></i> Gold Member</p>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="sidebar-nav-body">
+                <p class="sidebar-section-title">Navigation</p>
+                <ul class="dashboard-sidebar-menu">
+                    <li>
+                        <a href="#" class="dashboard-menu-link active" data-tab="overview">
+                            <i class="fas fa-th-large"></i> <span>Overview</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dashboard-menu-link" data-tab="bookings">
+                            <i class="fas fa-calendar-alt"></i> <span>Bookings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dashboard-menu-link" data-tab="history">
+                            <i class="fas fa-images"></i> <span>Galleries</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dashboard-menu-link" data-tab="settings">
+                            <i class="fas fa-sliders-h"></i> <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+
+
+                <!-- Pinned Bottom Footer Actions -->
+                <div class="sidebar-footer-box">
+                    <a href="login.html" class="sidebar-footer-link logout-link">
+                        <i class="fas fa-sign-out-alt"></i> <span>Sign Out</span>
+                    </a>
+                </div>
+        </aside>
+
+        <!-- Right Side Main Content Pane -->
+        <div class="dashboard-app-main">
+            <!-- Topbar Header with Breadcrumb & Controls -->
+            <header class="dashboard-topbar-header">
+                <div class="d-flex align-items-center gap-3">
+                    <!-- Dashboard Sidebar Toggle Hamburger Button (Mobile & Tab) -->
+                    <button class="nav-theme-btn dashboard-sidebar-toggle" id="btn-dashboard-sidebar-toggle"
+                        aria-label="Toggle Dashboard Menu"
+                        style="display: inline-flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+
+                <!-- Right Action Toolbar -->
+                <div class="d-flex align-items-center gap-2 dashboard-header-toolbar">
+                    <a href="#" class="nav-theme-btn" aria-label="Admin View"
+                        style="display: inline-flex; align-items: center; justify-content: center; text-decoration: none;"
+                        onclick="alert('Admin Panel view toggle! (UI Mock Only)');">
+                        <i class="fas fa-user-shield"></i>
+                    </a>                </div>
+            </header>
+
+            <!-- Dashboard Workspace Body -->
+            <main class="dashboard-body-workspace" id="client-dashboard-workspace">
+
+                <!-- Welcome Section -->
+                <div class="dashboard-welcome-banner reveal-fade-up">
+                    <div class="row align-items-center g-3">
+                        <div class="col-lg-8">
+                            <span class="text-accent text-uppercase-tracking font-alt small d-block">Private Studio
+                                Sanctuary</span>
+                            <h1 class="dashboard-welcome-title">Welcome back, Marcus</h1>
+                            <p class="dashboard-welcome-desc">Your private studio portal for proof reviews, milestone
+                                downloads, and custom heirloom print curation. Track your shoot schedule or book your
+                                next session below.</p>
+                            <div class="dashboard-metric-pill-row">
+                                <div class="dashboard-metric-pill">
+                                    <i class="fas fa-calendar-check"></i>
+                                    <span>Next Shoot: <strong>Sept 15, 2026</strong></span>
+                                </div>
+                                <div class="dashboard-metric-pill">
+                                    <i class="fas fa-camera-retro"></i>
+                                    <span>Proofs: <strong>48 Ready</strong></span>
+                                </div>
+                                <div class="dashboard-metric-pill">
+                                    <i class="fas fa-award"></i>
+                                    <span>Status: <strong>Gold Tier Client</strong></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 text-lg-end text-start">
+                            <button type="button" class="btn-premium btn-premium-primary py-2 px-3 font-alt small"
+                                onclick="document.querySelector('[data-tab=\'bookings\']').click();">
+                                <i class="fas fa-calendar-plus me-2"></i>Schedule New Session
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Panels Container -->
+                <div class="dashboard-tab-content-container reveal-fade-up">
+
+                    <!-- Panel A: Overview -->
+                    <div id="overview-tab-panel" class="dashboard-tab-panel">
+                        <div class="glass-card mb-4">
+                            <h3 class="font-alt mb-3" style="font-size: 1.8rem;">Client Workspace Overview</h3>
+                            <p class="text-muted">Manage your upcoming photography session details, select session
+                                packages, review booking statuses, or download proof galleries from a single
+                                location.</p>
+                        </div>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="dashboard-widget-card">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h4 class="font-alt m-0" style="font-size: 1.15rem; font-weight: 500;">
+                                            Active Schedule</h4>
+                                        <span class="dashboard-status-badge badge-confirmed">Confirmed</span>
+                                    </div>
+                                    <p class="mb-2 font-alt"
+                                        style="font-weight: 500; color: var(--color-text-primary);">Autumn Lifestyle
+                                        Family Session</p>
+                                    <p class="small text-muted mb-0"><i class="fas fa-clock me-1"></i> Sept 15, 2026
+                                        at 04:30 PM</p>
+                                    <p class="small text-muted"><i class="fas fa-map-marker-alt me-1"></i> Pine
+                                        Ridge Nature Reserve</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="dashboard-widget-card">
+                                    <h4 class="font-alt mb-3" style="font-size: 1.15rem; font-weight: 500;">Quick
+                                        Actions</h4>
+                                    <ul class="list-unstyled p-0 m-0 small font-alt">
+                                        <li class="mb-2"><a href="#" class="text-accent"
+                                                onclick="document.querySelector('[data-tab=history]').click();"><i
+                                                    class="fas fa-images me-2"></i> Access Proofing Gallery</a></li>
+                                        <li class="mb-2"><a href="#" class="text-accent"
+                                                onclick="document.querySelector('[data-tab=bookings]').click();"><i
+                                                    class="fas fa-calendar-plus me-2"></i> Book Next Session</a>
+                                        </li>
+                                        <li class="mb-0"><a href="contact.html" class="text-accent"><i
+                                                    class="fas fa-comment me-2"></i> Message Studio Manager</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel B: Bookings & Status -->
+                    <div id="bookings-tab-panel" class="dashboard-tab-panel d-none">
+                        <div class="glass-card mb-4">
+                            <h3 class="font-alt mb-4" style="font-size: 1.8rem;">Upcoming Photo Sessions</h3>
+                            <div class="table-comparison-wrapper mb-4">
+                                <table class="table-comparison" style="min-width: 600px;">
+                                    <thead>
+                                        <tr>
+                                            <th>Focus</th>
+                                            <th>Date & Hour</th>
+                                            <th>Location</th>
+                                            <th>Booking Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Family Lifestyle</td>
+                                            <td>Sept 15, 2026 • 04:30 PM</td>
+                                            <td>Pine Ridge Reserve</td>
+                                            <td><span class="dashboard-status-badge badge-confirmed">Confirmed</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maternity Fine Art</td>
+                                            <td>Oct 20, 2026 • 02:00 PM</td>
+                                            <td>Boutique Studio</td>
+                                            <td><span class="dashboard-status-badge badge-pending">Pending
+                                                    Info</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <button
+                                class="btn-premium btn-premium-outline btn-cancel-session-mock btn-outline-danger py-2">Request
+                                Session Cancellation</button>
+                        </div>
+
+                        <div class="glass-card">
+                            <h3 class="font-alt mb-4" style="font-size: 1.8rem;">Book a New Session</h3>
+                            <form id="dashboard-booking-form"
+                                onsubmit="event.preventDefault(); alert('Session booking request submitted! Our coordinator will contact you shortly to finalize details.');">
+                                <div class="row">
+                                    <div class="col-md-6 form-group-studio">
+                                        <label for="booking-package">Select Package Type</label>
+                                        <select class="form-control-studio" id="booking-package" required
+                                            style="cursor: pointer;">
+                                            <option value="" disabled selected>Choose a package...</option>
+                                            <option value="heirloom">Heirloom Portrait Package ($550)</option>
+                                            <option value="lifestyle">Lifestyle Family Session ($450)</option>
+                                            <option value="maternity">Maternity Fine Art Session ($500)</option>
+                                            <option value="newborn">Newborn Keepsake Session ($600)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 form-group-studio">
+                                        <label for="booking-date">Preferred Date</label>
+                                        <input type="date" class="form-control-studio" id="booking-date" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 form-group-studio">
+                                        <label for="booking-time">Preferred Hour</label>
+                                        <input type="time" class="form-control-studio" id="booking-time" required>
+                                    </div>
+                                    <div class="col-md-6 form-group-studio">
+                                        <label for="booking-location">Preferred Location</label>
+                                        <select class="form-control-studio" id="booking-location" required
+                                            style="cursor: pointer;">
+                                            <option value="" disabled selected>Choose a location...</option>
+                                            <option value="studio">Boutique Natural Light Studio</option>
+                                            <option value="pine-ridge">Pine Ridge Nature Reserve</option>
+                                            <option value="coastal">Coastal Shoreline (Sunset)</option>
+                                            <option value="home">In-Home Lifestyle Documentary</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group-studio">
+                                    <label for="booking-notes">Special Wardrobe / Session Notes</label>
+                                    <textarea class="form-control-studio" id="booking-notes" rows="4"
+                                        placeholder="Share any specific requests, child ages, or wardrobe styling questions..."></textarea>
+                                </div>
+                                <button type="submit" class="btn-premium btn-premium-primary mt-3">Submit Booking
+                                    Request</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Panel C: Galleries & Invoice History -->
+                    <div id="history-tab-panel" class="dashboard-tab-panel d-none">
+                        <div class="glass-card mb-4">
+                            <h3 class="font-alt mb-4" style="font-size: 1.8rem;">Historical Galleries & Invoices
+                            </h3>
+
+                            <div class="dashboard-widget-card p-4">
+                                <div class="row align-items-center">
+                                    <div class="col-md-8 col-sm-12 mb-3 mb-md-0">
+                                        <h4 class="font-alt mb-1"
+                                            style="font-size: 1.2rem; font-weight: 500; color: var(--color-text-primary);">
+                                            Summer Portraits 2025</h4>
+                                        <p class="small text-muted mb-0">Delivered: July 20, 2025 &bull; Total
+                                            Files: 45 High-Res WebP</p>
+                                        <p class="small text-muted">Invoice Ref: INV-2025-092 &bull; Paid: $550
+                                            (Heirloom Package)</p>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12 text-md-end">
+                                        <a href="assets/images/portrait1.jpg" download="Aura_Light_Summer_2025_All.zip"
+                                            class="btn-premium btn-premium-primary py-2 px-3 fs-6 me-2 mb-2 d-inline-block">
+                                            <i class="fas fa-download me-1"></i> Download ZIP
+                                        </a>
+                                        <a href="portfolio-details.html"
+                                            class="btn-premium btn-premium-outline py-2 px-3 fs-6 mb-2 d-inline-block">Access
+                                            Web Proofs</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card">
+                            <h3 class="font-alt mb-3" style="font-size: 1.8rem;">Delivered Photo Proofs</h3>
+                            <p class="text-muted small">Hover over any high-resolution image to download or
+                                favorite.</p>
+                            <div class="row g-3 justify-content-center">
+                                <div class="col-md-4 col-12">
+                                    <div class="gallery-hover-container rounded mb-2"
+                                        style="height: 200px; border: 1px solid var(--glass-border);">
+                                        <img src="assets/images/portraits/portrait1.jpg" alt="Proof 1"
+                                            style="width: 100%; height: 100%; object-fit: cover;">
+                                        <div class="gallery-hover-overlay">
+                                            <a href="assets/images/portraits/portrait1.jpg" download
+                                                class="btn btn-sm btn-light" style="padding: 0.25rem 0.5rem;"><i
+                                                    class="fas fa-download"></i></a>
+                                            <button class="btn btn-sm btn-outline-light"
+                                                onclick="this.classList.toggle('btn-danger'); this.classList.toggle('btn-outline-light');"
+                                                style="padding: 0.25rem 0.5rem;"><i class="fas fa-heart"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-12">
+                                    <div class="gallery-hover-container rounded mb-2"
+                                        style="height: 200px; border: 1px solid var(--glass-border);">
+                                        <img src="assets/images/families/family1.jpg" alt="Proof 2"
+                                            style="width: 100%; height: 100%; object-fit: cover;">
+                                        <div class="gallery-hover-overlay">
+                                            <a href="assets/images/families/family1.jpg" download
+                                                class="btn btn-sm btn-light" style="padding: 0.25rem 0.5rem;"><i
+                                                    class="fas fa-download"></i></a>
+                                            <button class="btn btn-sm btn-outline-light"
+                                                onclick="this.classList.toggle('btn-danger'); this.classList.toggle('btn-outline-light');"
+                                                style="padding: 0.25rem 0.5rem;"><i class="fas fa-heart"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-12">
+                                    <div class="gallery-hover-container rounded mb-2"
+                                        style="height: 200px; border: 1px solid var(--glass-border);">
+                                        <img src="assets/images/maternity/maternity1.jpg" alt="Proof 3"
+                                            style="width: 100%; height: 100%; object-fit: cover;">
+                                        <div class="gallery-hover-overlay">
+                                            <a href="assets/images/maternity/maternity1.jpg" download
+                                                class="btn btn-sm btn-light" style="padding: 0.25rem 0.5rem;"><i
+                                                    class="fas fa-download"></i></a>
+                                            <button class="btn btn-sm btn-outline-light"
+                                                onclick="this.classList.toggle('btn-danger'); this.classList.toggle('btn-outline-light');"
+                                                style="padding: 0.25rem 0.5rem;"><i class="fas fa-heart"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel D: Settings -->
+                    <div id="settings-tab-panel" class="dashboard-tab-panel d-none">
+                        <div class="glass-card">
+                            <h3 class="font-alt mb-4" style="font-size: 1.8rem;">Profile & System Settings</h3>
+                            <form id="settings-mock-form">
+                                <div class="row">
+                                    <div class="col-md-6 form-group-studio">
+                                        <label for="settings-name">Full Name</label>
+                                        <input type="text" class="form-control-studio" id="settings-name"
+                                            value="Marcus Vance" required>
+                                    </div>
+                                    <div class="col-md-6 form-group-studio">
+                                        <label for="settings-email">Email Address</label>
+                                        <input type="email" class="form-control-studio" id="settings-email"
+                                            value="demo.client@gmail.com" required>
+                                    </div>
+                                </div>
+                                <div class="form-group-studio">
+                                    <label for="settings-phone">Phone Coordinate</label>
+                                    <input type="tel" class="form-control-studio" id="settings-phone"
+                                        value="(310) 555-8910">
+                                </div>
+                                <div class="form-group-studio mt-3">
+                                    <input type="checkbox" id="settings-promo" checked>
+                                    <label for="settings-promo" class="text-muted small ms-1">Subscribe to seasonal
+                                        mini-session availability alerts</label>
+                                </div>
+                                <button type="submit" class="btn-premium btn-premium-primary mt-3">Save
+                                    Preferences</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Dashboard Sidebar Backdrop (Mobile & Tab) -->
+    <div class="dashboard-sidebar-backdrop" id="dashboard-sidebar-backdrop"></div>
+
+
+
+    <!-- GSAP Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/client-dashboard.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

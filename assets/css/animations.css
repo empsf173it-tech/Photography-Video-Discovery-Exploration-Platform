@@ -1,0 +1,109 @@
+/* ==========================================================================
+   MOTION AND KEYFRAMES SYSTEM
+   ========================================================================== */
+
+/* Fade In Up */
+.reveal-fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.reveal-fade-up.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Image Reveal Clip-Path */
+.img-reveal-frame {
+    position: relative;
+    overflow: hidden;
+}
+.img-reveal-frame::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-accent);
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform 1.2s cubic-bezier(0.85, 0, 0.15, 1);
+    z-index: 2;
+}
+.img-reveal-frame.revealed::after {
+    transform: scaleY(0);
+}
+
+/* Smooth zoom-in on image hover */
+.img-zoom-hover {
+    overflow: hidden;
+}
+.img-zoom-hover img {
+    transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.img-zoom-hover:hover img {
+    transform: scale(1.06);
+}
+
+/* Float Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+.animated-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Subtle pulse for highlights */
+@keyframes softPulse {
+    0% { opacity: 0.95; }
+    50% { opacity: 0.65; }
+    100% { opacity: 0.95; }
+}
+.soft-pulse {
+    animation: softPulse 2s ease-in-out infinite;
+}
+
+/* Counter micro-interaction */
+.counter-num {
+    font-family: var(--font-alt);
+    font-size: 3.5rem;
+    font-weight: 550;
+    color: var(--color-accent);
+    line-height: 1;
+    display: inline-block;
+}
+
+/* Page transitions screen mask */
+.page-transition-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-primary);
+    z-index: 9999;
+    transform: scaleY(0);
+    transform-origin: top;
+    pointer-events: none;
+    transition: transform 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+}
+.page-transition-mask.active {
+    transform: scaleY(1);
+}
+
+/* Loading Spinner */
+.spinner-studio {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--glass-border);
+    border-top: 2px solid var(--color-accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

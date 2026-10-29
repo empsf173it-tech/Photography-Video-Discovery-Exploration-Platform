@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover session details, preparation checklist, wardrobe styling tips, and schedule your appointment with our interactive booking widget.">
+    <title>Session Details & Booking | Aura & Light Studio</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <!-- Icon Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="studio-navbar scrolled d-flex align-items-center">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="index.html" class="navbar-brand-logo"><i class="fas fa-camera text-accent me-2"></i>AURA & LIGHT</a>
+            
+            <nav class="d-flex align-items-center">
+                <ul class="studio-nav-menu d-flex list-unstyled m-0 gap-3" id="studio-nav-menu">
+                    <li class="nav-item dropdown">
+                        <a href="index.html" class="studio-nav-link">Home <i class="fas fa-chevron-down nav-dropdown-caret ms-1"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Classic Editorial</a></li>                        </ul>
+                    </li>
+                    <li><a href="services.html" class="studio-nav-link active">Services</a></li>
+                    <li><a href="portfolio.html" class="studio-nav-link">Portfolio</a></li>
+                    <li><a href="blog.html" class="studio-nav-link">Blog</a></li>
+                    <li><a href="contact.html" class="studio-nav-link">Contact</a></li>
+                    <li><a href="dashboard.html" class="studio-nav-link">Dashboard</a></li>
+                    <li class="mobile-only-signup mt-2"><a href="signup.html" class="btn-nav-signup">Sign Up</a></li>
+                </ul>
+            </nav>
+
+            <div class="d-flex align-items-center gap-3">
+                <a href="signup.html" class="btn-nav-signup d-none d-md-inline-block">Sign Up</a>
+                <button class="hamburger-menu" id="btn-hamburger" aria-label="Menu Toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="py-5" style="margin-top: var(--header-height); background-color: var(--color-surface); border-bottom: 1px solid var(--glass-border);">
+        <div class="container py-5 text-center reveal-fade-up">
+            <p class="text-uppercase-tracking">Session Highlight</p>
+            <h1>Signature Portrait Experience</h1>
+            <p class="lead max-width-600 mx-auto text-muted">A deep-dive into what makes our editorial portraiture sessions unique, how to prepare, and online booking.</p>
+        </div>
+    </section>
+
+    <!-- Detailed Workflow & Prep Guide -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-7 mb-5 mb-lg-0 reveal-fade-up">
+                    <h2 class="mb-4">The Golden-Hour Portrait Session</h2>
+                    <p class="lead text-muted">A premium lifestyle portrait session designed for families, couples, and expectant mothers wishing to capture genuine love in soft golden ambient light.</p>
+                    
+                    <div class="my-5">
+                        <img src="assets/images/banners/banner1.jpg" alt="Golden Hour Session setup" class="w-100 mb-4" style="height: 380px; object-fit: cover; border-radius: 4px;">
+                    </div>
+
+                    <h3 class="mt-4 mb-3">Wardrobe & Style Guide</h3>
+                    <p>Coordinating clothing is essential to achieve a unified editorial aesthetic. Our standard recommendations include:</p>
+                    <ul class="mb-5 text-muted">
+                        <li class="mb-2"><strong>Color Palette</strong>: Stick to earthy neutrals, creamy ivory, tan, slate, soft sage, or pastel tones. Avoid heavy primary blues, reds, and neon pigments.</li>
+                        <li class="mb-2"><strong>Textures & Layers</strong>: Mix fabrics (linen, heavy knitwear, lace, denim) to create visual dimension without busy checkered or floral patterns.</li>
+                        <li class="mb-2"><strong>Logos & Prints</strong>: Avoid large graphic fonts, matching branding tags, or fine parallel stripes that cause camera distortion.</li>
+                    </ul>
+
+                    <h3 class="mt-4 mb-3">Frequently Expected Milestones</h3>
+                    <div class="row g-4 text-muted">
+                        <div class="col-sm-6">
+                            <h5 style="color: var(--color-text-primary);" class="font-alt">Weather Policy</h5>
+                            <p class="small">In case of heavy overcast skies or rain, we reschedule to the next available clear sunset window free of extra fees.</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <h5 style="color: var(--color-text-primary);" class="font-alt">Image Selection</h5>
+                            <p class="small">Choose your final retouched selections via your secure client gallery login, with add-ons available.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Session Booking Widget -->
+                <div class="col-lg-5 col-xl-4 offset-xl-1 reveal-fade-up">
+                    <div class="glass-card sticky-top" style="top: 110px; z-index: 10;">
+                        <h3 class="mb-4 text-center" style="font-size: 1.6rem;">Book a Session</h3>
+                        <form id="booking-session-form">
+                            <div class="form-group-studio">
+                                <label for="booking-package">Select Package</label>
+                                <select class="form-control-studio" id="booking-package" required>
+                                    <option value="Essentials Collection ($350)">Essentials Collection ($350)</option>
+                                    <option value="Heirloom Collection ($550)" selected>Heirloom Collection ($550)</option>
+                                    <option value="Fine-Art Gallery ($850)">Fine-Art Gallery ($850)</option>
+                                </select>
+                            </div>
+                            <div class="form-group-studio">
+                                <label for="booking-category">Photography Focus</label>
+                                <select class="form-control-studio" id="booking-category" required>
+                                    <option value="Family Portraits">Family Portraits</option>
+                                    <option value="Maternity Session">Maternity Session</option>
+                                    <option value="Newborn Fine Art">Newborn Fine Art</option>
+                                    <option value="Corporate / Portrait">Corporate / Portrait</option>
+                                    <option value="Graduation Session">Graduation Session</option>
+                                </select>
+                            </div>
+                            <div class="form-group-studio">
+                                <label for="booking-date">Choose Date</label>
+                                <input type="date" class="form-control-studio" id="booking-date" required>
+                            </div>
+                            <div class="form-group-studio">
+                                <label for="booking-time">Available Hours</label>
+                                <select class="form-control-studio" id="booking-time" required>
+                                    <option value="09:00 AM">09:00 AM (Morning Ambient)</option>
+                                    <option value="02:00 PM">02:00 PM (Midday Ambient)</option>
+                                    <option value="04:30 PM" selected>04:30 PM (Golden Hour Sunset)</option>
+                                </select>
+                            </div>
+                            <div class="form-group-studio">
+                                <label for="booking-name">Full Name</label>
+                                <input type="text" class="form-control-studio" id="booking-name" placeholder="First and Last Name" required>
+                            </div>
+                            <div class="form-group-studio">
+                                <label for="booking-email">Email Address</label>
+                                <input type="email" class="form-control-studio" id="booking-email" placeholder="email@address.com" required>
+                            </div>
+                            <button type="submit" class="btn-premium btn-premium-primary w-100 mt-2">Book Session</button>
+                        </form>
+                        <p class="text-center text-muted small mt-3 mb-0"><i class="fas fa-lock me-1"></i> Secures booking via reservation token</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="studio-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <a href="index.html" class="footer-logo"><i class="fas fa-camera text-accent me-2"></i>AURA & LIGHT</a>
+                    <p class="text-white-50">An editorial fine-art photography studio creating warm, emotional, and timeless records of families, portraits, and milestones.</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Photography Services</h4>
+                    <ul class="footer-links-list p-0">
+                        <li><a href="service-details.html">Portrait Sessions</a></li>
+                        <li><a href="service-details.html">Family Photography</a></li>
+                        <li><a href="service-details.html">Maternity Shoots</a></li>
+                        <li><a href="service-details.html">Newborn Sessions</a></li>
+                        <li><a href="service-details.html">Graduation Portfolios</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Support & Resources</h4>
+                    <ul class="footer-links-list p-0">
+                        <li><a href="services.html#pricing-section">Pricing Packages</a></li>
+                        <li><a href="login.html">Client Portal</a></li>
+                        <li><a href="blog.html">Wardrobe & Style Guide</a></li>
+                        <li><a href="contact.html">Studio Location</a></li>
+                        <li><a href="404.html">Licensing & Terms</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Studio Newsletter</h4>
+                    <p class="text-white-50">Subscribe to receive exclusive access to seasonal mini-session slots and photography tips.</p>
+                    <form class="footer-newsletter-form">
+                        <input type="email" class="footer-newsletter-input" placeholder="Your email address" required aria-label="Newsletter email">
+                        <button class="footer-newsletter-btn" type="submit">Join</button>
+                    </form>
+                    <div class="footer-social-links">
+                        <a href="#" class="footer-social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-icon" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="footer-social-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom-bar text-white-50">
+                <p class="m-0">&copy; 2026 Aura & Light Studio. All Rights Reserved.</p>
+                <p class="m-0">Fine-Art Studio &bull; Creative Retouching &bull; Heirloom Albums</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/client-dashboard.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,255 @@
+/* ==========================================================================
+   DARK THEME VARIABLE OVERRIDES
+   ========================================================================== */
+.dark-theme {
+    color-scheme: dark;
+    /* Colors */
+    --color-bg: #020617;           /* Slate 950 */
+    --color-surface: #111827;      /* Slate 900 */
+    --color-primary: #1E293B;      /* Slate 800 */
+    --color-secondary: #94A3B8;    /* Slate 400 */
+    --color-accent: #E9C46A;       /* Bright Soft Gold */
+    --color-highlight: #FBBF24;    /* Vivid Yellow-Gold */
+    --color-text-primary: #F8FAFC;  /* Slate 50 */
+    --color-text-secondary: #CBD5E1;/* Slate 300 */
+    
+    /* Transparent / Blur surfaces */
+    --glass-bg: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(255, 255, 255, 0.10);
+    --glass-blur: 10px;
+    
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   DARK MODE ADJUSTMENTS
+   ========================================================================== */
+.dark-theme body {
+    background-color: var(--color-bg);
+    color: var(--color-text-secondary);
+}
+
+.dark-theme h1, 
+.dark-theme h2, 
+.dark-theme h3, 
+.dark-theme h4, 
+.dark-theme h5, 
+.dark-theme h6 {
+    color: var(--color-text-primary);
+}
+
+/* Navbar Scrolled dark state */
+.dark-theme .studio-navbar.scrolled {
+    background-color: rgba(2, 6, 23, 0.8);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+/* Buttons in Dark Mode */
+.dark-theme .btn-premium-primary {
+    background-color: var(--color-text-primary);
+    color: var(--color-bg);
+    border-color: var(--color-text-primary);
+}
+.dark-theme .btn-premium-primary:hover {
+    background-color: transparent;
+    color: var(--color-text-primary);
+}
+.dark-theme .btn-premium-outline {
+    border-color: var(--color-text-primary);
+    color: var(--color-text-primary);
+}
+.dark-theme .btn-premium-outline:hover {
+    background-color: var(--color-text-primary);
+    color: var(--color-bg);
+}
+.dark-theme .btn-social-signin {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-color: var(--glass-border) !important;
+    color: var(--color-text-primary) !important;
+}
+.dark-theme .btn-social-signin:hover {
+    background-color: var(--color-text-primary) !important;
+    border-color: var(--color-text-primary) !important;
+    color: var(--color-bg) !important;
+}
+.dark-theme .btn-nav-signup {
+    color: var(--color-bg);
+    background-color: var(--color-text-primary);
+    border-color: var(--color-text-primary);
+}
+.dark-theme .btn-nav-signup:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-bg);
+}
+
+/* Custom form fields */
+.dark-theme .form-control-studio {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+.dark-theme .form-control-studio:focus {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-accent);
+}
+
+/* Timeline components */
+.dark-theme .timeline-flow::before {
+    background-color: var(--glass-border);
+}
+.dark-theme .timeline-badge {
+    background-color: var(--color-surface);
+    border-color: var(--color-bg);
+}
+.dark-theme .timeline-item:hover .timeline-badge {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+}
+
+/* Dropdown menus */
+.dark-theme .dropdown-menu {
+    background-color: var(--color-surface);
+    border-color: var(--glass-border);
+}
+.dark-theme .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Lightbox adjustment */
+.dark-theme .lightbox-modal {
+    background-color: rgba(2, 6, 23, 0.98);
+}
+
+/* Comparison Table */
+.dark-theme .table-comparison th,
+.dark-theme .table-comparison th:first-child {
+    background-color: #1E293B !important;
+    color: #FFFFFF !important;
+}
+.dark-theme .table-comparison th.highlight-col {
+    background-color: var(--color-accent) !important;
+    color: #020617 !important;
+}
+
+/* Client Dashboard Sidebar & Widgets */
+.dark-theme .dashboard-sidebar-menu {
+    border-color: var(--glass-border);
+}
+.dark-theme .dashboard-menu-link {
+    color: var(--color-text-secondary);
+}
+.dark-theme .dashboard-menu-link.active,
+.dark-theme .dashboard-menu-link:hover {
+    background-color: var(--color-accent);
+    color: #020617;
+}
+
+/* Footer elements in Dark Mode */
+.dark-theme .studio-footer {
+    background-color: #020617;
+    color: rgba(255, 255, 255, 0.7);
+    border-top: 1px solid var(--glass-border);
+}
+.dark-theme .footer-title {
+    color: #FFFFFF;
+}
+.dark-theme .footer-logo {
+    color: #FFFFFF !important;
+}
+.dark-theme .footer-links-list a {
+    color: rgba(255, 255, 255, 0.65);
+}
+.dark-theme .footer-newsletter-input {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+}
+.dark-theme .footer-newsletter-input:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+.dark-theme .footer-newsletter-btn {
+    color: var(--color-bg);
+}
+.dark-theme .footer-newsletter-btn:hover {
+    background-color: #FFFFFF;
+    color: var(--color-primary);
+}
+.dark-theme .footer-social-icon {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #FFFFFF;
+}
+.dark-theme .footer-social-icon:hover {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+}
+.dark-theme .footer-bottom-bar {
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Back to Top button Dark Mode overrides */
+.dark-theme .btn-back-to-top {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+.dark-theme .btn-back-to-top:hover {
+    background-color: #FFFFFF;
+    color: #020617;
+}
+
+/* Testimonial slider buttons hover override */
+.dark-theme .testimonial-ctrl-btn:hover {
+    background-color: var(--color-accent);
+    color: #020617;
+}
+
+/* Service / Table Page text overrides */
+.dark-theme .studio-footer .text-white-50 {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+
+/* Portfolio filter button Dark Mode overrides */
+.dark-theme .filter-btn {
+    background-color: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.08);
+    color: var(--color-text-secondary);
+}
+.dark-theme .filter-btn:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #020617 !important;
+}
+.dark-theme .filter-btn.active {
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
+    color: #020617 !important;
+}
+
+/* Contact Page Social Icons Dark Mode overrides */
+.dark-theme .contact-social-icon {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #FFFFFF;
+}
+.dark-theme .contact-social-icon:hover {
+    background-color: var(--color-accent);
+    color: #020617;
+}
+
+/* Date and Time input picker icons Dark Mode overrides */
+.dark-theme .form-control-studio,
+.dark-theme input[type="date"],
+.dark-theme input[type="time"] {
+    color-scheme: dark !important;
+}
+
+/* Dashboard App Dark Theme Enhancements */
+.dark-theme .sidebar-profile-box {
+    background: rgba(255, 255, 255, 0.03);
+}
+.dark-theme .dashboard-welcome-banner {
+    background: linear-gradient(135deg, #111827 0%, rgba(233, 196, 106, 0.05) 100%);
+}
+.dark-theme .dashboard-topbar-header {
+    background-color: rgba(17, 24, 39, 0.85);
+}

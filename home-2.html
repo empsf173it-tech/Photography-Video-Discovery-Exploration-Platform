@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Minimalist, fine-art portrait photography and family captures. View our boutique studio setup, client dashboard shortcuts, referral benefits, and answers to FAQs.">
+    <title>Aura & Light | Minimalist Portrait & Family Boutique Studio</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <!-- RTL Toggle Script -->
+    <script src="assets/js/rtl-toggle.js"></script>
+    <!-- Icon Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="studio-navbar d-flex align-items-center">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="index.html" class="navbar-brand-logo"><i class="fas fa-camera text-accent me-2"></i>AURA & LIGHT</a>
+
+            <nav class="d-flex align-items-center">
+                <ul class="studio-nav-menu d-flex list-unstyled m-0 gap-3" id="studio-nav-menu">
+                    <li class="nav-item dropdown">
+                        <a href="home-2.html" class="studio-nav-link active">Home <i
+                                class="fas fa-chevron-down nav-dropdown-caret ms-1"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Classic Editorial</a></li>
+                            <li><a class="dropdown-item active" href="home-2.html">Minimalist Studio</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="services.html" class="studio-nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="studio-nav-link">Portfolio</a></li>
+                    <li><a href="blog.html" class="studio-nav-link">Blog</a></li>
+                    <li><a href="contact.html" class="studio-nav-link">Contact</a></li>
+                    <li><a href="dashboard.html" class="studio-nav-link">Dashboard</a></li>
+                    <li class="mobile-only-signup mt-2"><a href="signup.html" class="btn-nav-signup">Sign Up</a></li>
+                </ul>
+            </nav>
+
+            <div class="d-flex align-items-center gap-3">
+                <button id="rtl-toggle-btn" class="nav-theme-btn" aria-label="Toggle RTL Mode"
+                    style="font-family: var(--font-alt); font-size: 0.75rem; font-weight: 500; margin-right: 0.25rem;">RTL</button>
+                <button id="theme-toggle-btn" class="nav-theme-btn" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="signup.html" class="btn-nav-signup d-none d-md-inline-block">Sign Up</a>
+                <button class="hamburger-menu" id="btn-hamburger" aria-label="Menu Toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Editorial Split Hero Section -->
+    <section class="editorial-hero-split">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <p class="text-uppercase-tracking hero-reveal">Boutique Experience</p>
+                    <h1 class="hero-title hero-reveal" style="font-size: 3.8rem; color: var(--color-text-primary);">
+                        Artistic <br><span class="font-editorial-italic">lifestyle frames</span> <br>for modern homes.
+                    </h1>
+                    <p class="hero-subtitle hero-reveal" style="color: var(--color-text-secondary);">An intimate
+                        portrait experience designed around custom settings, premium styling support, and gorgeous, warm
+                        golden hour tones.</p>
+                    <div class="d-flex gap-3 hero-reveal hero-btn-group">
+                        <a href="services.html" class="btn-premium btn-premium-primary">View Packages</a>
+                        <a href="contact.html" class="btn-premium btn-premium-outline">Request Info</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-reveal">
+                    <div class="editorial-hero-image-frame">
+                        <img src="assets/images/hero/hero2.jpg" alt="Sunset family photoshoot session">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Portal Shortcut Banner -->
+    <section class="py-5"
+        style="background-color: var(--color-surface); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); margin-top: 4rem;">
+        <div class="container py-4">
+            <div class="row align-items-center">
+                <div class="col-xl-8 col-lg-12 mb-4 mb-xl-0 reveal-fade-up text-center text-xl-start">
+                    <span class="text-uppercase-tracking">Secure Client Portal</span>
+                    <h2 class="mt-2 mb-3" style="font-size: 2.2rem;">Already booked a session?</h2>
+                    <p class="m-0 text-muted">Log in to your private client workspace to view status, choose favorite
+                        proofs, select prints, download full high-res albums, or review invoice details.</p>
+                </div>
+                <div class="col-xl-4 col-lg-12 text-center text-xl-end reveal-fade-up">
+                    <a href="login.html" class="btn-premium btn-premium-accent">Access Client Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview Section -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0 reveal-fade-up">
+                    <div class="row g-4">
+                        <div class="col-6">
+                            <div class="portfolio-card mb-4" style="border-radius: 4px;">
+                                <img src="assets/images/maternity/maternity1.jpg" alt="Maternity fine art"
+                                    class="portfolio-card-img" style="height: 300px;">
+                            </div>
+                            <div class="portfolio-card" style="border-radius: 4px;">
+                                <img src="assets/images/newborn/newborn2.jpg" alt="Newborn tiny detail feet"
+                                    class="portfolio-card-img" style="height: 200px;">
+                            </div>
+                        </div>
+                        <div class="col-6 mt-4">
+                            <div class="portfolio-card mb-4" style="border-radius: 4px;">
+                                <img src="assets/images/graduation/graduation1.jpg" alt="Graduate celebration"
+                                    class="portfolio-card-img" style="height: 200px;">
+                            </div>
+                            <div class="portfolio-card" style="border-radius: 4px;">
+                                <img src="assets/images/portraits/portrait2.jpg" alt="Corporate professional man"
+                                    class="portfolio-card-img" style="height: 300px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1 reveal-fade-up">
+                    <p class="text-uppercase-tracking">Tailored Sessions</p>
+                    <h2>What We Offer</h2>
+                    <p class="text-muted mb-4">Every package we build comes with a comprehensive wardrobe guide,
+                        post-processing corrections, and direct print credits to our online storefront.</p>
+
+                    <ul class="list-unstyled p-0 mb-4 font-alt">
+                        <li class="mb-3"><i style="color: var(--color-accent);"></i> Maternity & Pregnancy Portrals</li>
+                        <li class="mb-3"><i style="color: var(--color-accent);"></i> Newborn & Infant Studio Shoots</li>
+                        <li class="mb-3"><i style="color: var(--color-accent);"></i> Graduation & Senior Milestones</li>
+                        <li class="mb-3"><i style="color: var(--color-accent);"></i> Lifestyle Couples & Engagement
+                            Projects</li>
+                        <li class="mb-3"><i style="color: var(--color-accent);"></i> Executive Portraits & Branding</li>
+                    </ul>
+                    <a href="services.html" class="btn-premium btn-premium-outline">Detailed Pricing Grid</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referral Program Banner (UI Only) -->
+    <section class="py-5 bg-surface" style="background-color: var(--color-surface);">
+        <div class="container py-5">
+            <div class="glass-card reveal-fade-up" style="background-color: var(--color-bg);">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <span class="text-uppercase-tracking">Referral Rewards Program</span>
+                        <h3 class="mt-2 mb-3">Share your experience, get rewarded.</h3>
+                        <p class="text-muted m-0">Recommend Aura & Light to friends and relatives! When they book their
+                            first session, you receive a <strong class="highlight-text">$50 print credit
+                                voucher</strong> to add custom wood framing or album prints, and they get <strong
+                                class="highlight-text">10% off</strong> their booking package.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                        <a href="signup.html" class="btn-premium btn-premium-primary">Join Referral Circle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frequently Asked Questions Accordion -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5 reveal-fade-up">
+                <p class="text-uppercase-tracking">Studio FAQs</p>
+                <h2>Answers to Common Questions</h2>
+                <div class="mx-auto"
+                    style="width: 50px; height: 1px; background-color: var(--color-accent); margin-top: 1rem;"></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8 reveal-fade-up">
+
+                    <!-- FAQ 1 -->
+                    <div class="faq-item-card mb-3">
+                        <button class="faq-trigger">
+                            <span>What is the best time of day for outdoor portrait sessions?</span>
+                            <i class="fas fa-plus transition-icon"></i>
+                        </button>
+                        <div class="faq-content">
+                            <p class="text-muted" style="font-size: 0.95rem;">
+                                Outdoor portrait sessions are scheduled during the Golden Hour (about 90 minutes before
+                                sunset or 60 minutes after sunrise). The light during this window is incredibly soft,
+                                warm, and romantic.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-item-card mb-3">
+                        <button class="faq-trigger">
+                            <span>Can you help us choose coordinating outfits?</span>
+                            <i class="fas fa-plus transition-icon"></i>
+                        </button>
+                        <div class="faq-content">
+                            <p class="text-muted" style="font-size: 0.95rem;">
+                                Absolutely! Every booking includes our comprehensive style guide which recommends warm
+                                neutrals, soft earth tones, texture combinations, and colors to avoid under flash or
+                                sunlight.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-item-card mb-3">
+                        <button class="faq-trigger">
+                            <span>How long does the digital editing process take?</span>
+                            <i class="fas fa-plus transition-icon"></i>
+                        </button>
+                        <div class="faq-content">
+                            <p class="text-muted" style="font-size: 0.95rem;">
+                                A preview proofing gallery is delivered to your client dashboard within 5-7 days. Once
+                                you choose your favorites, the final professional color-graded files are completed and
+                                ready for download within 2-3 weeks.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="faq-item-card mb-3">
+                        <button class="faq-trigger">
+                            <span>Do you travel for outdoor lifestyle family shoots?</span>
+                            <i class="fas fa-plus transition-icon"></i>
+                        </button>
+                        <div class="faq-content">
+                            <p class="text-muted" style="font-size: 0.95rem;">
+                                Yes, travel within 30 miles of the main studio location is included. Destinations
+                                further away are subject to simple travel rate additions which we specify during the
+                                initial consultation.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="faq-item-card mb-3">
+                        <button class="faq-trigger">
+                            <span>Do we get to download the RAW, unedited files?</span>
+                            <i class="fas fa-plus transition-icon"></i>
+                        </button>
+                        <div class="faq-content">
+                            <p class="text-muted" style="font-size: 0.95rem;">
+                                To maintain the high-quality fine-art standard of our brand, we do not deliver raw,
+                                unedited camera files. Each delivered image is carefully retouched, color-corrected, and
+                                curated by our lead photographer.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 6 (Added) -->
+                    <div class="faq-item-card mb-3">
+                        <button class="faq-trigger">
+                            <span>Do you offer print licensing for commercial use?</span>
+                            <i class="fas fa-plus transition-icon"></i>
+                        </button>
+                        <div class="faq-content">
+                            <p class="text-muted" style="font-size: 0.95rem;">
+                                Yes, we offer custom commercial licensing packages for corporate branding, marketing
+                                assets, editorial publications, and advertising campaigns. Please contact the studio
+                                directly for a tailored quote.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="studio-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <a href="index.html" class="footer-logo"><i class="fas fa-camera text-accent me-2"></i>AURA &
+                        LIGHT</a>
+                    <p class="text-white-50">An editorial fine-art photography studio creating warm, emotional, and
+                        timeless records of families, portraits, and milestones.</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Photography Services</h4>
+                    <ul class="footer-links-list p-0">
+                        <li><a href="service-details.html">Portrait Sessions</a></li>
+                        <li><a href="service-details.html">Family Photography</a></li>
+                        <li><a href="service-details.html">Maternity Shoots</a></li>
+                        <li><a href="service-details.html">Newborn Sessions</a></li>
+                        <li><a href="service-details.html">Graduation Portfolios</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Support & Resources</h4>
+                    <ul class="footer-links-list p-0">
+                        <li><a href="services.html#pricing-section">Pricing Packages</a></li>
+                        <li><a href="login.html">Client Portal</a></li>
+                        <li><a href="blog.html">Wardrobe & Style Guide</a></li>
+                        <li><a href="contact.html">Studio Location</a></li>
+                        <li><a href="404.html">Licensing & Terms</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Studio Newsletter</h4>
+                    <p class="text-white-50">Subscribe to receive exclusive access to seasonal mini-session slots and
+                        photography tips.</p>
+                    <form class="footer-newsletter-form">
+                        <input type="email" class="footer-newsletter-input" placeholder="Your email address" required
+                            aria-label="Newsletter email">
+                        <button class="footer-newsletter-btn" type="submit">Join</button>
+                    </form>
+                    <div class="footer-social-links">
+                        <a href="#" class="footer-social-icon" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-icon" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-icon" aria-label="Pinterest"><i
+                                class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="footer-social-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom-bar text-white-50">
+                <p class="m-0">&copy; 2026 Aura & Light Studio. All Rights Reserved.</p>
+                <p class="m-0">Fine-Art Studio &bull; Creative Retouching &bull; Heirloom Albums</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/client-dashboard.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Register your details to create an account in our client portal and start booking sessions.">
+    <title>Client Sign Up | Aura & Light Studio</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <!-- Icon Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Top-Right Action Toolbar -->
+    <div class="auth-toolbar">    </div>
+
+    <!-- Sign up form workspace -->
+    <main style="min-height: 100vh; padding: 2.5rem 0;" class="d-flex align-items-center justify-content-center">
+        <div class="container py-2">
+            <div id="signup-form-container" class="reveal-fade-up">
+                <div class="auth-panel">
+                    <div class="text-center mb-4">
+                        <a href="index.html" class="navbar-brand-logo mb-3 d-inline-flex align-items-center justify-content-center">
+                            <i class="fas fa-camera text-accent me-2"></i>AURA & LIGHT
+                        </a>
+                        <span class="text-uppercase-tracking d-block mb-1">Register Profile</span>
+                        <h1 class="my-2" style="font-size: 2.2rem;">Create Account</h1>
+                        <p class="text-muted small">Access print vouchers, referral perks, and preview galleries.</p>
+                    </div>
+
+                    <form id="studio-signup-form" onsubmit="handleSignup(event)">
+                        <div class="form-group-studio">
+                            <label for="signup-name">Full Name</label>
+                            <input type="text" class="form-control-studio" id="signup-name" placeholder="John Doe"
+                                required>
+                        </div>
+                        <div class="form-group-studio">
+                            <label for="signup-email">Email Address</label>
+                            <input type="email" class="form-control-studio" id="signup-email"
+                                placeholder="client@address.com" required>
+                        </div>
+                        <div class="form-group-studio">
+                            <label for="signup-password">Password</label>
+                            <div class="password-input-wrapper">
+                                <input type="password" class="form-control-studio" id="signup-password"
+                                    placeholder="Min. 8 characters" required>
+                                <button type="button" class="password-toggle-btn" aria-label="Toggle Password Visibility">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group-studio">
+                            <label for="signup-confirm-password">Confirm Password</label>
+                            <div class="password-input-wrapper">
+                                <input type="password" class="form-control-studio" id="signup-confirm-password"
+                                    placeholder="Re-enter password" required>
+                                <button type="button" class="password-toggle-btn" aria-label="Toggle Password Visibility">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-group-studio mb-4 d-flex align-items-center gap-2">
+                            <input type="checkbox" id="signup-terms" required
+                                style="width: auto; margin-bottom: 0; cursor: pointer;">
+                            <label for="signup-terms" class="text-muted small m-0"
+                                style="display: inline; text-transform: none; font-weight: normal; letter-spacing: normal; cursor: pointer;">I
+                                accept the terms and wardrobe consent guidelines</label>
+                        </div>
+
+                        <button type="submit" class="btn-premium btn-premium-primary w-100">Sign Up</button>
+                    </form>
+
+                    <!-- Social Sign-in Divider -->
+                    <div class="text-center my-4 font-alt">
+                        <span class="text-muted small">Or continue with</span>
+                    </div>
+
+                    <!-- Authentic Social Buttons -->
+                    <div class="d-flex gap-3 justify-content-center mb-3">
+                        <button type="button" class="btn-premium btn-social-signin flex-fill py-2 px-3 d-flex align-items-center justify-content-center gap-2" style="margin-right: 0.5rem;" onclick="alert('Google Sign-Up Connected!');">
+                            <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+                                <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.11-6.72-4.96H1.29v3.15C3.26 21.3 7.31 24 12 24z"/>
+                                <path fill="#FBBC05" d="M5.28 14.24c-.25-.72-.38-1.49-.38-2.24s.13-1.52.38-2.24V6.61H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.39l3.99-3.15z"/>
+                                <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.61l3.99 3.15c.95-2.85 3.6-4.96 6.72-4.96z"/>
+                            </svg>
+                            <span>Google</span>
+                        </button>
+                        <button type="button" class="btn-premium btn-social-signin flex-fill py-2 px-3 d-flex align-items-center justify-content-center gap-2" onclick="alert('Apple ID Connected!');">
+                            <svg width="18" height="18" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                                <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 52.3-15.2 69.5-34.3z"/>
+                            </svg>
+                            <span>Apple</span>
+                        </button>
+                    </div>
+
+                    <div class="text-center mt-4 font-alt small">
+                        <span class="text-muted">Already have an account?</span>
+                        <a href="login.html" class="text-accent ms-1">Sign In</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <!-- GSAP Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/client-dashboard.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        function handleSignup(event) {
+            event.preventDefault();
+            const password = document.getElementById('signup-password').value;
+            const confirmPassword = document.getElementById('signup-confirm-password').value;
+            if (password !== confirmPassword) {
+                alert('Error: Passwords do not match. Please verify.');
+                return false;
+            }
+            alert('Account registered! Redirecting to secure login...');
+            window.location.href = 'login.html';
+        }
+
+        document.querySelectorAll('.password-toggle-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const wrapper = btn.closest('.password-input-wrapper');
+                const input = wrapper.querySelector('input');
+                const icon = btn.querySelector('i');
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.remove('fa-eye');
+                    icon.classList.add('fa-eye-slash');
+                } else {
+                    input.type = 'password';
+                    icon.classList.remove('fa-eye-slash');
+                    icon.classList.add('fa-eye');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
+
